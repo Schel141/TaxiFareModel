@@ -7,7 +7,8 @@ from TaxiFareModel.encoders import TimeFeaturesEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.linear_model import LinearRegression
 from TaxiFareModel.utils import compute_rmse
-from TaxiFareModel.data import get_data
+from TaxiFareModel.data import get_data, clean_data
+from sklearn.model_selection import train_test_split
 
 class Trainer():
 
@@ -58,11 +59,19 @@ class Trainer():
 
 if __name__ == "__main__":
     #test = Trainer()
+    # get data
     df = get_data()
-    print(df)
     # clean data
+    df = clean_data(df)
     # set X and y
+    y = df["fare_amount"]
+    X = df.drop("fare_amount", axis=1)
     # hold out
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
     # train
+    trainer = Trainer(X_train, y_train)
+    trainer.run()
     # test.evaluate
+    trainer.evaluate(X_test, y_test)
+
     print('TODO')
