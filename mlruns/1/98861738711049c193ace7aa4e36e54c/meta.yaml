@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/elenaschubert/code/Schel141/TaxiFareModel/mlruns/1/98861738711049c193ace7aa4e36e54c/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: 98861738711049c193ace7aa4e36e54c
+run_uuid: 98861738711049c193ace7aa4e36e54c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1653397795852
+status: 1
+tags: []
+user_id: unknown
